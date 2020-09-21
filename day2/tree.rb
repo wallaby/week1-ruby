@@ -12,9 +12,9 @@ class Tree
   end
 
   def self.tree_from_hash(tree = {})
-    raise('Not a tree!') if tree.size != 1
+    raise('Not a tree! If it is a forest then call forest_from_hash.') if tree.size > 1
 
-    forest_from_hash(tree)[0]
+    return forest_from_hash(tree)[0] if tree.size == 1
   end
 
   def self.forest_from_hash(trees = {})
